@@ -1,7 +1,6 @@
 <?php
-$margarita(isset($_POST['margarita'])) ? $_POST['margarita'] : null;
+$margarit
 ?>
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,7 +11,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>PizzaNet</title>
     </head>
     <body>
         <form action="Formulario.php" method="post">
@@ -22,20 +21,13 @@ and open the template in the editor.
             Telefono: <input type="text" name="tel"><br>
 
             <h2>Elige tu pizza:</h2>
-            <input type="checkbox" name="margarita" value="margarita">Margarita
-            <?php
-            if($margarita){
-                ?>
-            <input type="number">
-            <?php
-            }
-            ?>
-            <input type="checkbox" name="Barbacoa" value="Barbacoa">Barbacoa
-            <input type="checkbox" name="4 quesos" value="4 quesos">4 quesos
-            <input type="checkbox" name="4 estaciones" value="4 estaciones">4 estaciones
-            <input type="checkbox" name="Carbonara" value="Carbonara">Carbonara
-            <input type="checkbox" name="Romana" value="Romana">Romana
-            <input type="checkbox" name="Mediterranea" value="Mediterranea">Mediterranea
+            Margarita <input type="number" name="cMargarita" id="cMargarita"> <br> 
+            Barbacoa <input type="number" name="cBarbacoa" id="cBarbacoa"> <br> 
+            4 quesos <input type="number" name="c4quesos" id="c4quesos"> <br> 
+            4 estaciones <input type="number"> <br> 
+            Carbonara <input type="number"> <br> 
+            Romana <input type="number"> <br> 
+            Mediterranea <input type="number"> <br> 
 
             <h2>Elige tamaño:</h2>
             <input type="radio" name="pequeña" value="pequeña">Pequeña
@@ -48,16 +40,20 @@ and open the template in the editor.
 
             <h2>Extras</h2>
             <input type="checkbox" name="margarita" value="margarita">Queso
+            <input type="number"> <br> 
             <input type="checkbox" name="Barbacoa" value="Barbacoa">Pimiento
+            <input type="number"> <br> 
             <input type="checkbox" name="margarita" value="margarita">Cebolla
+            <input type="number"> <br> 
             <input type="checkbox" name="Barbacoa" value="Barbacoa">Jamon
+            <input type="number"> <br> 
             <input type="checkbox" name="margarita" value="margarita">Pollo
+            <input type="number"> <br> 
 
 
         </form>
 
         <?php
-        // put your code here
         ?>
     </body>
 </html>
