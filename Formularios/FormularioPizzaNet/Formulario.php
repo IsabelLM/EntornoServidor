@@ -114,6 +114,7 @@ if ($enviado) {
 
                 <h2>Extras</h2>
 
+                
                 <select name="extras" size="5" multiple="true">
                     <option value="Queso" name="extras['queso']">Queso</option>
                     <option value="Pimiento"name="extras['pimiento']">Pimiento</option>
