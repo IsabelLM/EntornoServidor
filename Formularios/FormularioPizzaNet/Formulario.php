@@ -14,8 +14,6 @@ if (empty($usuario['nombre']) || empty($usuario['dir']) || empty($usuario['tel']
     $correctoDatos = true;
 }
 
-
-
 if ($enviado) {
     if ($tamano == 'pequeña') {
         $precioTamano = 5;
@@ -24,6 +22,14 @@ if ($enviado) {
     } else if ($tamano == 'grande') {
         $precioTamano = 10;
     }
+}
+
+if ($enviado) {
+    if ($extra == 'jamon' || $extra == 'pollo') {
+        $precioExtra = 1;
+    } else{
+        $precioExtra = 0.75;
+       }
 }
 
 if ($enviado) {
@@ -67,7 +73,7 @@ if ($enviado) {
                 <tr>
                     <td>Tipo pizza:</td>
                     <td><?php
-                        echo " " . $pizza
+                        echo "pizza " . $pizza;
                         ?>
                     </td>
                 </tr>
@@ -85,15 +91,15 @@ if ($enviado) {
                 </tr>
                 <tr>
                     <td>Extras:</td>
-                    <td><?php
+                    <td  align="right"><?php
                         foreach ($_POST["extras"] as $value) {
-                            echo " " . $value;
+                            echo " " . $value . " ". $precioExtra;
                         }
                         ?></td>
                 </tr>
                 <tr>
                     <th align="left">Total:</th>
-                    <td align="right"><?= ($precioMasa + $precioTamano) * $cantidadPizza . "€" ?></td>
+                    <td align="right"><?= ($precioMasa + $precioTamano + $precioExtra) * $cantidadPizza . "€" ?></td>
                 </tr>
             </table>
             <?php
@@ -165,13 +171,12 @@ if ($enviado) {
 
                 <h2>Extras</h2>
 
-
                 <select name="extras[]" size="5" multiple="true">
                     <option value="Queso" name="extras['queso']">Queso (+0.75€)</option>
                     <option value="Pimiento"name="extras['pimiento']">Pimiento (+0.75€)</option>
                     <option value="Cebolla"name="extras['cebolla']">Cebolla (+0.75€)</option>
-                    <option value="Jamon"name="extras['jamon']">Jamon (+1€)</option>
-                    <option value="Pollo"name="extras['pollo']">Pollo (+1€)</option>
+                    <option value="jamon"name="extras['jamon']">Jamon (+1€)</option>
+                    <option value="pollo"name="extras['pollo']">Pollo (+1€)</option>
                 </select><br><br>
 
                 <input type="submit" name="aceptar" value="Enviar pedido">
@@ -181,6 +186,5 @@ if ($enviado) {
         <?php
     }
     ?>
-
 </body>
 </html>
