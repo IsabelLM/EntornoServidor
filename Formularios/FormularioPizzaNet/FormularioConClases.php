@@ -23,8 +23,6 @@ class Cliente {
 }
 class Pedido{
  
-   public $c1 = new Cliente();
-    echo $c1->telefono;
-    
+
     
 }

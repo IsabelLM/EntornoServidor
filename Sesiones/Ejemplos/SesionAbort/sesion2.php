@@ -12,7 +12,7 @@ session_start();
             <?php
             echo 'nombre =',$_SESSION['nombre'],'<br>';
             $_SESSION['nombre'] = '?'; //Modifica datos de sesión
-            session_abort(); //Anula la sesión
+            session_abort(); //Anula la sesión o session_reset();
             echo 'nombre = ', $_SESSION['nombre'],'<br>';
             ?>
             <a href="sesion3.php">Pagina 3</a><br>
