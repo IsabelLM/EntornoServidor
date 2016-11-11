@@ -92,6 +92,6 @@ class Pedido {
         $this->pizzas = new Pizza($tipoPizza, $tamanoPizza, $masa, $extras);
     }                       
    
-    .$cliente ->
+    //.$cliente ->
     
 }
