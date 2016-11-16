@@ -28,7 +28,7 @@ class Cliente {
         $this->direccion = $direccion;
     }
 
-    function setTelefono($telefono) {
+    public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
@@ -38,7 +38,7 @@ class Cliente {
 }
 
 class Pizza{
-    public $tipoPizza;
+    public $tipoPizza ;
     public $tamanoPizza;
     public $masa;
     public $extras;
@@ -65,7 +65,7 @@ class Pizza{
         return $this->extras;
     }
 
-    function setTipoPizza($tipoPizza) {
+     function setTipoPizza($tipoPizza) {
         $this->tipoPizza = $tipoPizza;
     }
 
@@ -90,8 +90,16 @@ class Pedido {
     function __construct() {
         $this->cliente = new Cliente($direccion, $telefono, $nombre);
         $this->pizzas = new Pizza($tipoPizza, $tamanoPizza, $masa, $extras);
-    }                       
-   
-    //.$cliente ->
+    }        
+    
+    function prueba(){
+       // $cliente->
+    }
     
 }
+
+$cliente = new Cliente("", "", "");
+$cliente->getNombre();
+
+
+        
