@@ -17,9 +17,15 @@ if ($cursor === false) {
     dis(print_r(sqlsrv_errors(), true));
 }
 
-$rows = sqlsrv_has_rows($cursor);
-while ($rows) {
-    while ($fila = sqlsrv_fetch_array($cursor, SQLSRV_FETCH_NUMERIC)) {
-        echo $fila[0], ", " . $fila[1], ", " . $fila[2] . " " . $fila[3] . ", " . $fila[4] . ", " . $fila[5] . "<br>";
+if ($cursor) {
+    $rows = sqlsrv_has_rows($cursor);
+    if ($rows === true) {
+        echo "Hay filas. <br />";
+        while($fila = sqlsrv_fetch_array($cursor)){
+            echo $fila[0],", ".$fila[1].", ".$fila[2]." ".$fila[3].", ".$fila[4].", ".$fila[5]."<br>";
+        }
+    } else {
+        echo "No hay filas. <br />";
     }
 }
+
